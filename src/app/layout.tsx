@@ -18,6 +18,11 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Auditra | AI Audit Workspace",
   description: "AI-powered auditing platform for accounting teams",
+  icons: {
+    icon: "/auditra-logo.jpg",
+    shortcut: "/auditra-logo.jpg",
+    apple: "/auditra-logo.jpg",
+  },
 };
 
 export default function RootLayout({

@@ -9,9 +9,7 @@ function getResolvedTheme(): Theme {
   if (stored === "light" || stored === "dark") {
     return stored;
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return "light";
 }
 
 function applyTheme(theme: Theme) {
