@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { ShieldCheck } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { PropsWithChildren, useState } from "react";
 import { DetailDrawer } from "@/components/detail-drawer";
@@ -19,6 +19,21 @@ function getTitle(pathname: string) {
   return item?.label ?? "Auditra";
 }
 
+function BrandMark({ size = 28 }: { size?: number }) {
+  return (
+    <div
+      className="inline-flex items-center justify-center rounded-lg border border-accent/35 bg-gradient-to-br from-accent to-blue-600 text-white shadow-sm"
+      style={{ width: size, height: size }}
+      aria-hidden="true"
+    >
+      <ShieldCheck
+        size={Math.max(14, Math.floor(size * 0.58))}
+        strokeWidth={2.2}
+      />
+    </div>
+  );
+}
+
 export function AppShell({ children }: PropsWithChildren) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,13 +45,7 @@ export function AppShell({ children }: PropsWithChildren) {
         <header className="sticky top-0 z-30 border-b border-border/70 bg-bg/90 backdrop-blur-md">
           <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-2 px-3 py-3 sm:px-4 lg:px-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/auditra-mark.jpg"
-                alt="Auditra"
-                width={32}
-                height={32}
-                className="rounded-md"
-              />
+              <BrandMark size={32} />
               <span className="text-base font-semibold text-fg hidden sm:inline">
                 Auditra
               </span>
@@ -125,13 +134,7 @@ export function AppShell({ children }: PropsWithChildren) {
             className="mb-6 block rounded-xl border border-accent/20 bg-accent-soft p-3"
           >
             <div className="flex items-center gap-2">
-              <Image
-                src="/auditra-mark.jpg"
-                alt="Auditra"
-                width={24}
-                height={24}
-                className="rounded"
-              />
+              <BrandMark size={24} />
               <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent">
                 Auditra Suite
               </p>
@@ -165,13 +168,7 @@ export function AppShell({ children }: PropsWithChildren) {
             className="mb-8 block rounded-xl border border-accent/20 bg-accent-soft p-3 transition hover:brightness-95"
           >
             <div className="flex items-center gap-2">
-              <Image
-                src="/auditra-mark.jpg"
-                alt="Auditra"
-                width={28}
-                height={28}
-                className="rounded"
-              />
+              <BrandMark size={28} />
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent">
                   Auditra Suite

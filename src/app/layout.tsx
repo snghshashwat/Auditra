@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "Auditra | AI Audit Workspace",
   description: "AI-powered auditing platform for accounting teams",
   icons: {
-    icon: "/auditra-logo.jpg",
-    shortcut: "/auditra-logo.jpg",
-    apple: "/auditra-logo.jpg",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
 };
 
